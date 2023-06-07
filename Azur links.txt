@@ -1,0 +1,13 @@
+# Install IIS
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+
+# Remove default htm file
+remove-item C:\inetpub\wwwroot\iisstart.htm
+
+#Add custom htm file
+Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from my " + $env:computername)
+
+
+note pad :- https://esi.microsoft.com/
+
+https://learn.microsoft.com/en-in/azure/virtual-machines/co-location
